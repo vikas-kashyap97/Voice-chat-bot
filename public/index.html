@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script
+            src="https://cdn.socket.io/4.5.3/socket.io.min.js"
+            integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi"
+            crossorigin="anonymous"
+            ></script>
+        
+        <script src="https://unpkg.com/wavesurfer.js@7.4.6"></script>
+        <script src="https://unpkg.com/wavesurfer.js@7.4.6/dist/plugins/record.min.js"></script>
+        <script src="https://unpkg.com/wavesurfer.js@7.4.6/dist/plugins/regions.min.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            
+            <div id="content1">
+                
+                <div id="mic"></div>
+            </div>
+            <div id="content">
+                <br>
+                <div class="centered">
+                  <select id="model" onchange="modelChanged()">
+                    <option selected hidden value="listener">Theme</option>
+                    <option value="listener">Listener</option>
+                    <option value="medic">Medic</option>
+                    <option value="therapist">Therapist</option>
+                    <option value="critic">Critic</option>
+                    <option value="brainstorm">Brainstorm</option>
+                    <option value="recipes">Recipes</option>
+                    <option value="songwriter">Songwriter</option>
+                    <option value="deepgram">Deepgram</option>
+                  </select>
+
+                  <select id="voice">
+                    <option selected hidden value="aura-asteria-en">TTS Voice</option>
+                    <option value="aura-asteria-en">Asteria</option>
+                    <option value="aura-athena-en">Athena</option>
+                    <option value="aura-angus-en">Angus</option>
+                    <option value="aura-helios-en">Helios</option>
+                    <option value="aura-hera-en">Hera</option>
+                    <option value="aura-luna-en">Luna</option>
+                    <option value="aura-perseus-en">Perseus</option>
+                    <option value="aura-zeus-en">Zeus</option>
+                  </select>
+                </div>
+                <div id="conversation">
+                    
+                </div>
+                <div class="spacer">&nbsp;</div>
+            </div>
+            <div class="gradientback"></div>
+        </div>
+        <div class="recorder" onclick="toggleRecording()">
+            <img id="mic" src="mic_off.png" width="50px">
+            <div id="audio_file" style="display: none;">
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="waveform.js"></script>
+    </body>
+</html>
